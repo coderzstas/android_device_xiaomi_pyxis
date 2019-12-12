@@ -144,6 +144,10 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := libinit_pyxis
+TARGET_RECOVERY_DEVICE_MODULES := libinit_pyxis
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2

@@ -22,16 +22,13 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from pyxis device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_BRAND := xiaomi
+PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := pyxis
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_NAME := lineage_pyxis
-PRODUCT_MODEL := MI CC 9
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-TARGET_VENDOR := xiaomi
-TARGET_VENDOR_PRODUCT_NAME := pyxis
-PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="pyxis-user 10 QKQ1.190828.002 9.11.28 release-keys"
+TARGET_VENDOR := Xiaomi
 
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Xiaomi/pyxis/pyxis:10/QKQ1.190828.002/9.11.28:user/release-keys
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.model
