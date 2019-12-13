@@ -14,8 +14,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_pixys.mk
-	
+    $(LOCAL_DIR)/lineage_pyxis.mk
+
 COMMON_LUNCH_CHOICES := \
-    lineage_pixys-userdebug \
-    lineage_pixys-user
+    lineage_pyxis-userdebug \
+    lineage_pyxis-user

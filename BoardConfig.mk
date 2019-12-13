@@ -118,6 +118,10 @@ TARGET_USES_NQ_NFC := true
 
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := libinit_pyxis
+TARGET_RECOVERY_DEVICE_MODULES := libinit_pyxis
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 

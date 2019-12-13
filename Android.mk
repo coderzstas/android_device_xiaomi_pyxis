@@ -16,6 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),pixys)
+ifeq ($(TARGET_DEVICE),pyxis)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
