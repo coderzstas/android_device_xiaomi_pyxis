@@ -16,8 +16,8 @@
 xiaomi_pixys_fod_hal_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
-    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pixys",
-    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pixys.rc"],
+    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pyxis",
+    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pyxis.rc"],
     srcs: [
 	"service.cpp",
         "FingerprintInscreen.cpp",
