@@ -22,19 +22,21 @@
 #include <fstream>
 #include <cmath>
 
-#define FINGERPRINT_ERROR_VENDOR 8
-
 #define COMMAND_NIT 10
 #define PARAM_NIT_FOD 3
 #define PARAM_NIT_NONE 0
 
-#define DISPPARAM_PATH "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param"
+#define DISPPARAM_PATH "/sys/class/drm/card0-DSI-1/disp_param"
 #define DISPPARAM_FOD_BACKLIGHT_HBM "0x1D007FF"
 #define DISPPARAM_FOD_BACKLIGHT_RESET "0x2D01000"
 
 #define FOD_STATUS_PATH "/sys/devices/virtual/touch/tp_dev/fod_status"
 #define FOD_STATUS_ON 1
 #define FOD_STATUS_OFF 0
+
+#define FOD_SENSOR_X 455
+#define FOD_SENSOR_Y 1910
+#define FOD_SENSOR_SIZE 190
 
 namespace {
 
@@ -59,15 +61,15 @@ FingerprintInscreen::FingerprintInscreen() {
 }
 
 Return<int32_t> FingerprintInscreen::getPositionX() {
-    return FOD_POS_X;
+    return FOD_SENSOR_X;
 }
 
 Return<int32_t> FingerprintInscreen::getPositionY() {
-    return FOD_POS_Y;
+    return FOD_SENSOR_Y;
 }
 
 Return<int32_t> FingerprintInscreen::getSize() {
-    return FOD_SIZE;
+    return FOD_SENSOR_SIZE;
 }
 
 Return<void> FingerprintInscreen::onStartEnroll() {
@@ -109,7 +111,7 @@ Return<bool> FingerprintInscreen::handleAcquired(int32_t acquiredInfo, int32_t v
 
 Return<bool> FingerprintInscreen::handleError(int32_t error, int32_t vendorCode) {
     LOG(ERROR) << "error: " << error << ", vendorCode: " << vendorCode << "\n";
-    return error == FINGERPRINT_ERROR_VENDOR && vendorCode == 6;
+    return false;
 }
 
 Return<void> FingerprintInscreen::setLongPressEnabled(bool) {
@@ -122,7 +124,7 @@ Return<int32_t> FingerprintInscreen::getDimAmount(int32_t brightness) {
     if (brightness > 62) {
         alpha = 1.0 - pow(brightness / 255.0 * 430.0 / 600.0, 0.45);
     } else {
-        alpha = 1.0 - pow(brightness / 200.0, 0.45);
+        alpha = 1.0 - pow(brightness / 150.0, 0.45);
     }
 
     return 255 * alpha;

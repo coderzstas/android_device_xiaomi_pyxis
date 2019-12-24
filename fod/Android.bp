@@ -13,13 +13,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-xiaomi_pixys_fod_hal_binary {
+cc_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
     name: "lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pyxis",
     init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pyxis.rc"],
     srcs: [
-	"service.cpp",
+        "service.cpp",
         "FingerprintInscreen.cpp",
     ],
     shared_libs: [

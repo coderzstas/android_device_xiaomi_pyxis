@@ -28,14 +28,10 @@ PRODUCT_PACKAGES += \
 
 # Properties
 -include $(LOCAL_PATH)/device-props.mk
-
+-include $(LOCAL_PATH)/vendor-props.mk
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Device init scripts
-PRODUCT_PACKAGES += \
-    init.target.rc
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -87,7 +83,8 @@ PRODUCT_PACKAGES += \
 
 # Common init scripts
 PRODUCT_PACKAGES += \
-    init.qcom.rc
+    init.qcom.rc \
+    init.target.rc
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
