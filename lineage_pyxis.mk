@@ -31,4 +31,4 @@ PRODUCT_NAME := lineage_pyxis
 TARGET_VENDOR := xiaomi
 TARGET_VENDOR_PRODUCT_NAME := pyxis
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomipyxis
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
