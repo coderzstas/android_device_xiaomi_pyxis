@@ -27,15 +27,18 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
 # Properties
--include $(LOCAL_PATH)/device-props.mk
--include $(LOCAL_PATH)/vendor-props.mk
+-include $(LOCAL_PATH)/device_props.mk
+-include $(LOCAL_PATH)/vendor_props.mk
+
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pyxis
+    android.hardware.biometrics.fingerprint@2.1 \
+    lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_pyxis \
+    vendor.xiaomi.hardware.fingerprintextension@1.0
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
